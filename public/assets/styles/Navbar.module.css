@@ -1,0 +1,91 @@
+/* For some reason I cant figure out at the moment this is fragile and required tinkering */
+.svg_fill {
+    /* fill: var(--svg-fill); */
+    @apply fill-gray-300 w-[45px] h-[45px] p-[6px] mr-6 dark:hover:bg-black hover:border-[1px] rounded; 
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px); /* Adjust the initial position as needed */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* Animates the mobile nav menu */
+.animate_nav {
+    animation: fadeIn .2s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+/* 
+    These styles are a mess and I am not very experienced with the organization of tailwind. 
+    This is a work in progress
+*/
+
+/* Mobile nav menu list links */
+.navM_link_item, .navM_link_active {
+    @apply block w-full py-3 px-6 rounded text-lg mobile_nav_hover;
+}
+/* Active state for Links */
+.navM_link_active {
+    @apply mobile_nav_bg;
+}
+/* Sign in / Sign out button */
+.navM_button {
+    @apply py-2 m-4 rounded-lg text-lg mobile_nav_hover mobile_nav_bg transition ease-in-out hover:scale-95;
+}
+
+/* hr that divides links from profile links */
+.nav_divider {
+    @apply mx-5 my-2 border-[1px] border-gray-600;
+}
+
+/* Hover styles */
+.mobile_nav_hover {
+    @apply hover:!bg-slate-700; 
+}
+/* Background color theme */
+.mobile_nav_bg {
+    /* @apply dark:!bg-[#141414] !bg-slate-900 */
+    @apply dark:!bg-dark-gray !bg-slate-900
+}
+
+
+
+/* Medium+ nav menu */
+.nav_link_li {
+    @apply h-full flex items-center;
+}
+
+.nav_link {
+    @apply px-4 py-2 rounded hover:bg-black dark:hover:bg-slate-700;
+}
+
+.nav_link_active {
+    @apply nav_theme;
+}
+
+/* .nav_link_active {
+    @apply bg-slate-600 hover:bg-slate-600 dark:bg-black dark:hover:bg-black;
+} */
+
+/* not used yet */
+.dropdown_list_item {
+    @apply p-2 pl-4 py-3 rounded text-gray-700 hover:bg-gray-100 dark:hover:bg-slate-600 dark:text-gray-200;
+}
+
+/* FIX ------------------------------------------------------------------------------------------------ */
+/* I have no idea why there is a specificity issue with this, I looked for a solid hour */
+/* .nav_btn {
+    @apply !bg-slate-600 p-[.3em] px-5 rounded-lg hover:!bg-black dark:!bg-black dark:hover:!bg-slate-700 transform hover:scale-90 duration-300 ease-in-out
+} */
+.nav_btn {
+    @apply p-[.3em] nav_theme px-5 rounded-lg transform hover:scale-90 duration-300 ease-in-out
+}
+
+.nav_theme {
+    @apply !bg-slate-600 hover:!bg-black dark:!bg-dark-gray dark:hover:!bg-slate-700
+}

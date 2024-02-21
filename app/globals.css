@@ -2,28 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/*
+ *  FORMATS FOR FONTS
+ *  woff: format("woff")
+ *  ttf: format("truetype");
+*/
+
+@font-face {
+  font-family: "Memphis";
+  src: url("../public/fonts/MemphisRiver.ttf") format("truetype");
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: "Roblox";
+  src: url("../public/fonts/Roblox-Font-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Memphis-font {
+  font-family: "Memphis", sans-serif;
+}
+
+.Roblox-font {
+  font-family: "Roblox", sans-serif;
+}
+
+
+@layer base {
+  /* LIGHT THEME */
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-hex: #f0f0f0;
+    --background-end-hex: #dcdcdc; 
+  }
+
+  /* DARK THEME */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-hex: #202124;
+      --background-end-hex: #17181a; 
+    }
+  }
+
+  body {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--background-end-hex)
+    )
+    var(--background-start-hex)
+  }
+
+  body {
+    @apply h-screen flex flex-col;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+
+  .text_color {
+    @apply text-gray-800 dark:text-gray-300
+  }
+  .container_theme {
+    @apply rounded-lg bg-gray-300 dark:bg-[#292929] p-5
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  
 }
 
 @layer utilities {

@@ -8,11 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      darkMode: "class",
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        'blue': '#1f2937',
+        'dark-gray': "#202124"
+      }
     },
   },
   plugins: [],

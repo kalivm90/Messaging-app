@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SockMessage
+Messaging/chat app that uses web sockets for instant communication with a seperate websocket server for serverless NextJS app
+
+## Technology Used
+NextJs, mongoose/MongoDB, ExpressJS, WebSocket, TypeScript 
 
 ## Getting Started
 

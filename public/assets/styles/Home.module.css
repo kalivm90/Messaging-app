@@ -1,0 +1,12 @@
+.header {
+    position: relative;
+}
+
+
+.header div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 4px 4px 10px rgb(0, 0, 0);
+}
